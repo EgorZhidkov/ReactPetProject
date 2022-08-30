@@ -1,0 +1,58 @@
+.window {
+    display: flex;
+    flex-direction: row;
+}
+
+.sideBar {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    height: 100vh;
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    background-color: rgba(134, 158, 246, 0.535);
+    padding: 8px 16px;
+    transition: 0.5s;
+    &.closed {
+        width: 0px;
+        padding: 0px;
+        & button {
+            transform: rotate(180deg);
+            transition: 0.5s;
+            // margin: 20px;
+        }
+        & .sideBar-list {
+            width: 0px;
+            display: none;
+        }
+    }
+    &.open {
+        width: 20rem;
+    }
+    & button {
+        margin-bottom: 8px;
+        display: flex;
+        align-items: center;
+        background-color: transparent;
+        border: none;
+        width: 35px;
+        height: 35px;
+        justify-content: flex-end;
+        margin-left: auto;
+        cursor: pointer;
+    }
+    &-list {
+        padding: 0px;
+        list-style: none;
+        &__cell {
+            cursor: pointer;
+            // width: 100%;
+            padding: 8px 16px;
+            border: 2px solid rgb(107, 90, 234);
+            border-radius: 8px;
+            &:not(:last-child) {
+                margin-bottom: 20px;
+            }
+        }
+    }
+}
